@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+ARG="$1"
+shift
+COLUMNS="$1"
+shift
+EXPR="$@"
+DIRTMP=$(mktemp -d)
+mkfifo $DIRTMP/other_columns
+tee $DIRTMP/other_columns | csvcut $ARG $COLUMNS | ${EXPR} |
+paste -d, - <(csvcut ${ARG~~} $COLUMNS $DIRTMP/other_columns)
+rm -rf $DIRTMP
