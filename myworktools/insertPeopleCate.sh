@@ -7,7 +7,7 @@ desc=$1_$2
 
 function run_239_optimus()
 {
-/usr/bin/mysql \
+mysql \
         --default-character-set=utf8 \
         -h 192.168.144.239 \
         -u data -p'PIN239!@#$%^&8' \
