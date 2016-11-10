@@ -1,1 +1,1 @@
-grep $1 rpt_report_unbid 
+grep $1 ~/myflow/myworktools/rpt_report_unbid 
