@@ -1,0 +1,28 @@
+#!/usr/bin/expect  
+
+if { [llength $argv] < 4 } {
+    puts "Usage:  $argv0 ip port user passwd"
+    exit 1
+} 
+
+set ip [lindex $argv 0]
+set port [lindex $argv 1]
+set user [lindex $argv 2]
+set passwd [lindex $argv 3]
+set timeout 30  
+
+spawn ssh -q -l$user -p$port $ip
+ 
+expect {
+    "assword:" {
+        send "$passwd\r"
+    }
+    "FATAL" {
+        puts "\nCONNECT ERROR: $ip occur FATAL ERROR!!!\n"
+        exit 1
+    }
+    "No route to host" {
+        puts "\nCONNECT ERROR: $ip No route to host!!!\n"
+        exit 1
+    }
+}
