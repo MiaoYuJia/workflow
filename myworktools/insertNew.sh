@@ -11,7 +11,7 @@ function run_239_optimus()
 {
 mysql \
         --default-character-set=utf8 \
-        -h 192.168.144.239 \
+        -h 192.168.156.39 \
         -u data -p'PIN239!@#$%^&8' \
         -D amp \
 	-e "$sql"
