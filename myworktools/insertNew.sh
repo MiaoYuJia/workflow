@@ -6,7 +6,7 @@ cateid=$3
 desc=$1_$3
 
 
-sql="INSERT INTO advertiser_audience_tag  VALUES ('null', 0, SYSDATE(), SYSDATE(), 0,1,'$adverid', '$companyid', '$desc', '$cateid', '', '$desc')"
+sql="INSERT INTO advertiser_audience_tag  VALUES ('null', 0, SYSDATE(), SYSDATE(), 0,1,'$adverid', '$companyid', '$desc', '$cateid', '','', '$desc')"
 function run_239_optimus()
 {
 mysql \
