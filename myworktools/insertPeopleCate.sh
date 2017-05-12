@@ -12,6 +12,6 @@ mysql \
         -h 192.168.144.239 \
         -u data -p'PIN239!@#$%^&8' \
         -D optimus \
-        -e "INSERT INTO advertiser_audience_classify VALUES (NULL, 1, SYSDATE(), SYSDATE(), $companyid, '$desc', $cateid, 1, 0, '$desc', 0, NULL)"
+        -e "INSERT INTO advertiser_audience_classify VALUES (NULL, 1, SYSDATE(), SYSDATE(), $companyid, '$desc', $cateid, 1, 0, '$desc', 0, NULL, NULL)"
 }
 run_239_optimus;
